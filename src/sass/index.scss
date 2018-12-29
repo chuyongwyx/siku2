@@ -1,0 +1,312 @@
+.middle_top{
+                width: 100%;
+                overflow: hidden;
+                background: #fff;
+                .wrap{
+                    width: 1200px;
+                    margin: 0 auto;
+                    margin-top: 20px;
+                   height: 940px;
+                    .wrap_left{
+                        width: 530px;
+                        height: 940px;
+                        float: left;
+                        position: relative;
+                        
+                       
+                        .sec{
+                            width: 530px;
+                            height: 790px;
+                        }
+                        .sec_2{
+                            width: 530px;
+                            height: 150px;
+                            position: absolute;
+                            bottom: 40px;
+                            left: 0;
+                            img{
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        
+                        .left_mask{
+                            position: absolute;
+                            left: 0;
+                            height: 250px;
+                            width: 100%;
+                            
+                        }  
+                    }
+                  
+                    
+                    .wrap_right{
+                         float: left;
+                         height: 980px;
+                         width: 670px;
+                        .international{
+                            position: relative;
+                            height: 410px;
+                            width: 650px;
+                            .inter_img1{
+                                width: 266px;
+                                height: 410px;
+                                position: absolute;
+                                z-index: 1;
+                                top: 0px;
+                                left: 20px;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
+                            }
+                            .inter_img2{
+                                  width: 480px;
+                                height: 410px;
+                                position: absolute;
+                                left:190px ;
+                                top: 0;
+                                 img{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                            }
+                        } 
+                    }
+                    
+                    .video{
+                                width: 650px;
+                                height: 550px;
+                                background: #000;
+                                position: relative;
+                                margin-left: 20px;
+margin-top: 20px;                                
+                                video{
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                        .video_mask{
+             width: 650px;
+             height: 550px;
+             background: url(../../../dist/image/index37.jpg)no-repeat;
+             position: absolute; 
+             left: 0;
+             top: 0;   
+             img{
+                 display: block;
+                 width: 110px;
+                 height: 110px;
+                 margin-top:220px ;
+                 margin-left: 270px;
+                 float: left;
+                 
+             }                       
+                               }
+                               
+                    }
+                    
+                }
+}
+}
+
+//轮播图地方div样式
+.middle_carousel{
+     width: 100%;
+     height: 560px;
+     overflow: hidden;
+    padding-top: 80px;
+     .wrap{
+         width: 1200px;
+         height: 500px;
+         margin: 0 auto;
+        border-top: 2px solid #666666;
+       border-bottom: 2px solid #666666;
+       position: relative;
+        .carousel_title{
+            position: absolute;
+            text-align: center;
+            width: 290px;
+            height: 38px;
+            background: #fff;
+            left: 459px;
+            top:-38px ;
+        }
+        
+        .carousel_bott{
+            position: absolute;
+            bottom: -26px;
+            left:482px;
+            width:220px;
+            height: 60px;
+            background: #fff;
+            text-align: center;
+            img{
+                background: #fff;
+            }
+            span{
+                    width: 50px;
+                    height: 50px;
+                    display: block;
+                    position: absolute;
+                    line-height: 50px;
+                    text-align: center;
+                    cursor: pointer;
+                    i{
+                        font-size: 21px;
+                        font-weight: 900;
+                    }
+            }
+            .carous_i{
+                        left: 48px;
+                        top: 3px;
+            }
+            .carous_i2{
+                        left:125px ;
+                        top:3px ;
+            }
+        }
+        .carouse_h{
+                        width: 1200px;
+                        overflow: hidden;
+        }
+         .carousel_img{
+                        width: 5000px;
+                        overflow: hidden;
+                       
+                .carousel_star{
+                        width:232px ;
+                        height: 358px;
+                        margin-top: 40px;
+                        background: orange;
+                        overflow: hidden;
+                        margin-left: 10px;
+                        float: left;
+                        position: relative;
+                        .hide{
+                                width: 232px;
+                                height: 358px;
+                                background:#f5f5f5;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0; 
+                        }
+                        img{
+                                width: 100%;
+                                float: left;
+                                display: block;
+                        }
+                        .carousel_text{
+                                height: 116px;
+                                background: #f5f5f5;
+                                
+                            h4{
+                                font-weight: normal;
+                                font-size: 16px;
+                                margin-top: 20px;
+                                line-height: 32px;
+                                margin-left: 20px;
+                               
+                            }
+                            p{
+                                    font-size: 12px;
+                                    margin-left: 20px;
+                            }
+                            .bot_p{
+                                    border-bottom:2px solid #000;
+                              width: 100px; 
+                              margin-top:20px;
+                             margin-bottom: 20px;     
+                            }
+                        }
+             }           
+        }
+     }
+}
+
+//时装衣橱
+
+.middle_wardrobe{
+            width: 100%;
+            overflow: hidden;
+            .wrap{
+                width: 1200px;
+                margin: 0 auto;
+               height: 1600px;
+               margin-bottom: 20px;
+               position: relative;
+               .wardrobe_img1{
+                    width: 950px;
+                    height: 630px;
+                    img{
+                       width: 100%;
+                       height: 100%; 
+                    }
+                }
+                .wardrobe_img2{
+                    width: 640px;
+                    height: 630px;
+                    position: absolute;
+                    top: 10px;
+                    left: 565px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .sikuApp{
+                       width: 1200px;
+                       height: 300px;
+                       margin: 20px 0;
+                       img{
+                           width: 100%;
+                           height: 100%;
+                       }
+                }
+                
+                .kuke{
+                      width: 1200px;
+                      overflow: hidden;
+                      img{
+                          display: block;
+                          float: left;
+                          margin:20px 10px ;
+                      }
+                }
+            }
+}
+
+//the world of sec
+.Global{
+            width: 100%;
+            
+            overflow: hidden;
+            background: #ffb81c;
+            .wrap{
+                width: 1200px;
+                height:700px;
+                .Global_tit{
+                    width: 291px;
+                    height: 109px;
+                    margin-left: 480px;
+                    margin-top: 50px;
+                    margin-bottom: 40px;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    } 
+                }
+                .Global_text{
+                          width: 1200px;
+                          overflow: hidden;
+                          img{
+                              display: block;
+                              float: left;
+                              margin:0 10px ;
+                              
+                          }
+                }
+            }
+}
