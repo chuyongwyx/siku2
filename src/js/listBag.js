@@ -1,3 +1,4 @@
+//引用公共页面头部
 $('.quote').load('../../dist/html/public.html  #header',function(){
 	$('.lang').hover(function(){
 	$('.lang').css('color','#ffb81c');
@@ -86,8 +87,7 @@ $.get('../json/public.json?t='+new Date().getTime(),function(str){
 					arr2.push(eval(str[jsonli]));
 			 }
 			
-		    console.log(arr1);
-		    console.log(arr2);
+		   
 		//取出li遍历li有多少个li
 		  for(var i=1,len=$('#list li').length;i<len;i++){
 		  		var  box= document.createElement('div');
@@ -192,133 +192,166 @@ $('#search_btn').blur(function(){
 });
 });
 
-//index中的动画效果
 
-$('.wrap_left').hover(function(){
-	$('.wrap_left .left_mask').css('display','block');
-},function(){
-	$('.wrap_left .left_mask').css('display','none');
-})
-
-$('.wrap_right').hover(function(){
-	$('.wrap_right .right_mask').css('display','block');
-},function(){
-	$('.wrap_right .right_mask').css('display','none');
-})
-
-$('.video_mask img').click(function(){
-	$('.video_mask').css('display','none');
+//列表页的json获取
+(function(){
+	var arr =[];
+	var arr2 =[];
+$.get('../../dist/json/bagPouch.json?t='+new Date().getTime(),function(str){
 	
-});
+	 for(var kinds in str){
+	 	 arr.push(kinds);
+	 	var ds= str[kinds].split(',');
+	 	arr2.push(ds);
+	 }
 
-//轮播图操作
-$('.carouse_h .carousel_img .carousel_star').hover(function(){
-	$(this).children('.hide').animate({'bottom':'10px'});
-	$(this).children('.hide').css('color','orange');
-},function(){
-	$(this).children('.hide').animate({'bottom':'0'});
-	$(this).children('.hide').css('color','black');
-})
-
-//轮播部分
-//alert($('.carousel_star').length);
-//1210px
-
-$('.carousel_bott .carous_i').hover(function(){
-	
-	$('.carousel_bott .carous_i').css('color','lightgray');
-},function(){
-	$('.carousel_bott .carous_i').css('color','black');
-})
-
-$('.carousel_bott .carous_i2').hover(function(){
-	
-	$('.carousel_bott .carous_i2').css('color','lightgray');
-},function(){
-	$('.carousel_bott .carous_i2').css('color','black');
-})
-
-
-
-$('.carousel_bott .carous_i2').click(function(){
-		var leave = $('.carousel_img')[0].offsetLeft;
-		var move =  -1210+leave; 
-	
-		if(move<-3630){
+		var index = 0;
+		$('.list_content dt').each(function(){
+			index++;
+			$(this).text(''+arr[index]+':');
+		});
+		var  index2 = 0;
+		$('.list_content dd').each(function(){
+			index2++;
+			for(var i=0,len=arr2[index2].length;i<len;i++){
+				$(this).append('<a href="javascript:;" title='+arr2[index2][i]+'>'+arr2[index2][i]+'</a>');
+			}
 			
-			$('.carousel_img')[0].style.marginLeft='0';
-			$('.carousel_img').animate({'marginLeft':-1210});
-			
-		}else{
-			$('.carousel_img').animate({'marginLeft':move});
-		}
-	
-	
-})
-
-$('.carousel_bott .carous_i').click(function(){
+		})
 		
-		var leave = $('.carousel_img')[0].offsetLeft;
-		var move2 =  1210+leave; 
-		if(move2>0){
-			$('.carousel_img')[0].style.marginLeft='-3630px';
-			$('.carousel_img').animate({'marginLeft':-2420});
-		}else{
-			$('.carousel_img').animate({'marginLeft':move2});
+		for(var j=0,lens=arr2[0].length;j<lens;j++){
+			$('#list_shop').append('<a href="listBag.html">'+arr2[0][j]+'</a>');
 		}
+		
+		$('#list_shop a').hover(function(){
+			
+		$(this).css('color','black').css('textDecoration','underline');
+		},function(){
+		$(this).css('color','black').css('color','#666').css('textDecoration','');	
+		});
+		//动态创建后的a中js交互
+		$('#list_content a').hover(function(){
+			$(this).css('color','red');
+			
+		},function(){
+			$(this).css('color','#666');
+		})
+		//选择添加
+		//解决异步问题
+		$('#list_content dd a').click(function(){
+			var that = $(this);
+			new Promise(function(resolve,reject){
+			var shop_dd =that.text();
+			var shop_dt =that.parent().parent().prev().text();
+			//console.log(shop_dd);
+			that.parent().parent().parent().remove();
+			var ems= $('#select_a').append('<a href="javascript:;">'+shop_dt+shop_dd+'<em>x</em></a>');
+			$('.select_kind').css('display','block');
+			resolve(ems);
+			
+			}).then($('#select_a a em').click(function(){
+				$(this).parent().remove();
+				
+			}))
+		})
+		
+		//多选问题
+		$('.moresel').click(function(){
+			var dda_text ="";
+			var ddt_text="";
+			$('#list_content dd a').off('click');
+			$('#list_content dd a').on('click',function(){
+				$(this).css('lineHeight','24px');
+				$(this).css('marginTop','10px');
+				$(this).css('border','1px solid #666');
+				var str = $(this).text();
+				dda_text+=str+'、';
+				 ddt_text =$(this).parent().parent().prev().text();
+				return false;
+				
+			})
+			var  that = $(this);
+			new Promise(function(resolve,reject){
+			that.parent().prev().css('height','200px');
+			//$(this).parent().prev().css('overflow','scroll');
+			var btn = that.parent().prev().append('<div id="btn"><button class="btn_ok">确定</button><button class="btn_down">取消</button></div>');
+			that.parent().css('display','none');
+			
+			
+			resolve(btn);
+			}).then(
+				new Promise(function(resolve,reject){
+				$('.btn_ok').click(function(){
+				$('#select_a').append('<a href="javascript:;">'+ddt_text+dda_text+'<em>x</em></a>');
+				$('.select_kind').css('display','block');
+				$('.btn_ok').parent().parent().parent().parent().remove();
+				$('#select_a a em').click(function(){
+				$(this).parent().remove();
+				
+			})
+				$('#list_content dd a').on('click',function(){
+					//多选和单选问题
+						var that = $(this);
+						new Promise(function(resolve,reject){
+						var shop_dd =that.text();
+						var shop_dt =that.parent().parent().prev().text();
+						//console.log(shop_dd);
+						that.parent().parent().parent().remove();
+						var ems= $('#select_a').append('<a href="javascript:;">'+shop_dt+shop_dd+'<em>x</em></a>');
+						$('.select_kind').css('display','block');
+						resolve(ems);
+						
+						}).then($('#select_a a em').click(function(){
+							$(this).parent().remove();
+							
+						}))
+						return false;
+					
+				})
+				
+				
+			})}).then()
+				);
+		
+					
+		
+		});
+		
+		
+		
+		//更多的问题
+		//点击更多按钮把隐藏的部分显示出来
+		
+		
+		
+})
+//js列表栏功能动画
+ $('#tit_all').hover(function(){
+ 	$('#tit_all').css('color','red');
+ },function(){
+ 	$('#tit_all').css('color','#666');
+ })
+$('.list_i2').hover(function(){
+	$('.list_i2 a').css('color','red');
+	$('.list_i2').css('background','#fff');
+	$('.list_i2 i').html('&#xe504;');
+	$('#list_shop').css('display','block');
+	$('#list_shop a').css('color','#666');
+},function(){
+	$('.list_i2 a').css('color','#666');
+	$('.list_i2').css('background','');
+	$('.list_i2 i').html('&#xe509;');
+	$('#list_shop').css('display','none');
+	$('#list_shop a').css('color','');
 	
-	
 })
 
-//遮盖
-$('.wardrobe_img1').hover(function(){
-	$('.wardrobe_mask').css('display','block');
-},function(){
-	$('.wardrobe_mask').css('display','none')
-})
 
-$('.kuke .kuke_img1').mouseenter(function(){
-	$('.kuke .kuke_mask1').css('display','block');
-})
-
-$('.kuke .kuke_img1').mouseleave(function(){
-	$('.kuke .kuke_mask1').css('display','none');
-})
-
-$('.kuke_img2').hover(function(){
-	$('.kuke_mask2').css('display','block');
-},function(){
-	$('.kuke_mask2').css('display','none');
-})
-
-$('.kuke_img3').hover(function(){
-	$('.kuke_mask3').css('display','block');
-},function(){
-	$('.kuke_mask3').css('display','none');
-})
-
-$('.Global_img1').hover(function(){
-	$('.img_mask1').css('display','block');
-},function(){
-	$('.img_mask1').css('display','none');
-});
-
-$('.Global_img2').hover(function(){
-	$('.img_mask2').css('display','block');
-},function(){
-	$('.img_mask2').css('display','none');
-});
-
-$('.Global_img3').hover(function(){
-	$('.img_mask3').css('display','block');
-},function(){
-	$('.img_mask3').css('display','none');
-});
+})()
 
 
 
-
-//页脚动画
+//引用页脚
 $('.quote_footer').load('../../dist/html/public.html  #footer',function(){
 	$('.server ul li a').hover(function(){
 	$(this).css('text-decoration','underline');

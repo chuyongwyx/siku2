@@ -24,6 +24,7 @@
                             position: absolute;
                             bottom: 40px;
                             left: 0;
+                            z-index: 2;
                             img{
                                 display: block;
                                 width: 100%;
@@ -34,8 +35,11 @@
                         .left_mask{
                             position: absolute;
                             left: 0;
-                            height: 250px;
+                            top: 0;
+                            height: 790px;
                             width: 100%;
+                            background: rgba(0,0,0,0.3);
+                            display: none;
                             
                         }  
                     }
@@ -45,6 +49,7 @@
                          float: left;
                          height: 980px;
                          width: 670px;
+                         position:relative;
                         .international{
                             position: relative;
                             height: 410px;
@@ -90,6 +95,7 @@ margin-top: 20px;
                                         .video_mask{
              width: 650px;
              height: 550px;
+            
              background: url(../../../dist/image/index37.jpg)no-repeat;
              position: absolute; 
              left: 0;
@@ -101,11 +107,21 @@ margin-top: 20px;
                  margin-top:220px ;
                  margin-left: 270px;
                  float: left;
+                 cursor: pointer;
                  
              }                       
                                }
                                
                     }
+    .right_mask{
+                height: 410px;
+                width: 480px;
+                position: absolute;
+                left:190px;
+                top: 0;
+                background: rgba(0,0,0,0.3);
+                display: none;
+    }        
                     
                 }
 }
@@ -155,7 +171,7 @@ margin-top: 20px;
                     cursor: pointer;
                     i{
                         font-size: 21px;
-                        font-weight: 900;
+                        font-weight: 1200;
                     }
             }
             .carous_i{
@@ -172,7 +188,9 @@ margin-top: 20px;
                         overflow: hidden;
         }
          .carousel_img{
-                        width: 5000px;
+                        width: 4860px;
+                        margin-left:-1210px;
+                        
                         overflow: hidden;
                        
                 .carousel_star{
@@ -191,6 +209,7 @@ margin-top: 20px;
                                 position: absolute;
                                 bottom: 0;
                                 left: 0; 
+                                cursor: pointer;
                         }
                         img{
                                 width: 100%;
@@ -239,9 +258,21 @@ margin-top: 20px;
                .wardrobe_img1{
                     width: 950px;
                     height: 630px;
+                    position:relative;
+                    
                     img{
                        width: 100%;
                        height: 100%; 
+                    }
+                    .wardrobe_mask{
+                        position: absolute;
+                        width: 950px;
+                        height: 630px;
+                        left: 0;
+                        top: 0;
+                        background: rgba(0,0,0,0.3);
+                        display:none;
+                        
                     }
                 }
                 .wardrobe_img2{
@@ -268,11 +299,55 @@ margin-top: 20px;
                 .kuke{
                       width: 1200px;
                       overflow: hidden;
+                     
                       img{
                           display: block;
+                          border: 0;
+                          width: 100%;
+                          height: 100%;
+                      }
+                      .kuke_img1{
+                          width: 380px;
+                          height: 600px;
                           float: left;
                           margin:20px 10px ;
+                           position: relative;
+                          .kuke_mask1{
+                          position: absolute;
+                          left: 0px;
+                          top: 0px;
+                         width: 380px;
+                         height: 600px; background:rgba(0,0,0,0.3);
+                         display: none;
                       }
+                      }
+                      .kuke_img2{
+                          @extend .kuke_img1 ;
+                             .kuke_mask2{
+                          position: absolute;
+                          width: 380px;
+                         height: 600px; background:rgba(0,0,0,0.3);
+                         left: 0;
+                         top: 0;
+                         display: none;
+                      }
+                      }
+                      .kuke_img3{
+                          @extend .kuke_img1;
+                           .kuke_mask3{
+                          position: absolute;
+                           width: 380px;
+                         height: 600px; background:rgba(0,0,0,0.3);
+                         left: 0px;
+                         top: 0px;
+                         display: none;
+                      }
+                      }
+                      
+                      
+                   
+                      
+                     
                 }
             }
 }
@@ -301,11 +376,37 @@ margin-top: 20px;
                 .Global_text{
                           width: 1200px;
                           overflow: hidden;
-                          img{
-                              display: block;
+                          .Global_img1{
+                              
+                              width:380px;
+                              height:504px;
                               float: left;
                               margin:0 10px ;
+                              position: relative;                    
+                              .img_mask1{
+                                  position: absolute;
+                                  left: 0;
+                                  top: 0;
+                                 width: 380px;
+                                 height: 504px;
+                                 background:rgba(0,0,0,0.3);
+                                 display: none;
+                              }     
+                          }
+                          .Global_img2{
+                              @extend .Global_img1;
+                              .img_mask2{
+                                  @extend .img_mask1;
+                              }
                               
+                          }
+                          
+                          
+                          .Global_img3{
+                              @extend .Global_img1;
+                              .img_mask3{
+                                  @extend .img_mask1;
+                              }
                           }
                 }
             }
