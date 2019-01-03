@@ -27,22 +27,24 @@
 							<p>打开<span>寺库app</span>扫一扫登录</p>
 							<p>使用合作网站账号登录</p>
 							<p><img src="../../src/image/login8.jpg" alt="" /><span>QQ</span><img src="../image/login11.png" alt="" /><span>微信</span></p>
-						<p>还不是寺库会员 ?<a href="register"> 免费注册</a><span>忘记密码</span></p>		
+						<p>还不是寺库会员 ?<a href="register.html"> 免费注册</a><span>忘记密码</span></p>		
 						
 						
-						<div class="pass_login">
+						<div class="pass_login" id="pass_login">
 							<div class="user_erws">扫码登录</div>
 							<div class="user_passs">密码登录</div>
-						<div class="username"><input type="text" value="用户名/手机号/邮箱"/><i class="iconfont">&#xe63a;</i></div>
-						<div class="userpas"><input type="password" name="" id="" value=""placeholder="密码" /><i class="iconfont">&#xe679;</i></div>
+							
+							<div class="alerts" id="alerts"><img src="../../src/image/login1.png" alt="" id="altersImg" /><span id="alertsp"></span></div>
+						<div class="username"><input type="text" value="用户名/手机号/邮箱" id="user_login"/><i class="iconfont">&#xe63a;</i></div>
+						<div class="userpas"><input type="password" name="" id="user_password" value=""placeholder="密码" /><i class="iconfont">&#xe679;</i></div>
 				<div class="reallypas">
 					<span class="s1">验证码</span>
-					<input type="text" />
-					<span class="s2">213213</span><em>换一换</em>
+					<input type="text" id="realnum" />
+					<span class="s2" id="randnum"></span><button  id="randem" >换一换</button>
 				</div>	
-				<div class="checked"><input type="checkbox" />记住账号</div>
+				<div class="checked"><input type="checkbox" checked="checked"/>记住账号</div>
 					
-				<div class="btn_user">立即登录</div>
+				<div class="btn_user" id="btn_user">立即登录</div>
 				
 				
 						</div>
@@ -84,5 +86,9 @@
 					<p><img src="../../src/image/public2.jpg" alt="" /><img src="../image/public3.jpg" alt="" /><img src="../image/public10.png" alt="" /></p>
 				</div>
 			</div>
+			
+			<script src="../js/jquery-1.11.3.js"></script>
+			<script src="../../src/gulpmin/js/cookie.min.js"></script>
+			<script src="../../src/gulpmin/js/login.min.js"></script>
 	</body>
 </html>

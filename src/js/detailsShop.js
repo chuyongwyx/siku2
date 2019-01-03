@@ -193,15 +193,86 @@ $('#search_btn').blur(function(){
 });
 
 //详情页的操作
+$('.small .img').hover(function(){
+	$(this).children('.img_bg').css('display','block');
+	var index = $(this)[0].id;
+	$('.big img')[0].src='../image/detailbig'+index+'.jpg';
+	$('#magnifier img')[0].src='../image/detailbig'+index+'.jpg';
+	
+},function(){
+	$(this).children('.img_bg').css('display','none');
+})
+
+$('#big').mouseover(function(){
+	$('#magnifier').css('display','block');
+	$('#mask').css('display','block');
+})
+$('#big').mouseout(function(){
+	$('#magnifier').css('display','none');
+	$('#mask').css('display','none');
+})
+
+$('.maskbig').mousemove(function(evt){
+								var x = evt.offsetX;
+								var y = evt.offsetY;
+								if(x <= $('#mask')[0].offsetWidth/2){
+										x = $('#mask')[0].offsetWidth/2; 
+										
+								}else if(x >= $('#big')[0].offsetWidth -$('#mask')[0].offsetWidth/2){
+										x = $('#big')[0].offsetWidth - $('#mask')[0].offsetWidth/2;
+								}
+								
+								if(y <= $('#mask')[0].offsetHeight/2){
+										y = $('#mask')[0].offsetHeight/2;
+								}else if(y >= $('#big')[0].offsetHeight - $('#mask')[0].offsetHeight/2){
+										y = $('#big')[0].offsetHeight - $('#mask')[0].offsetHeight/2;
+								}
+								$('#mask')[0].style.left = x - $('#mask')[0].offsetWidth/2 +'px';
+								$('#mask')[0].style.top = y -$('#mask')[0].offsetHeight/2 +'px';
+								
+								var leftx= -$('#mask')[0].offsetLeft*1.25+'px' ;
+								var topy = -$('#mask')[0].offsetTop*1.25 +'px';
+								
+								$('#magnifier img').css('left',leftx);
+								$('#magnifier img').css('top',topy);
+})
+
+//cookie操作
+$('#ejian').click(function(){
+	var num =parseInt($('#espan').text());
+	var num2 = num-1;
+	if(num == 0){
+		num2 =0 ;
+	}
+	$('#espan').text(num2);
+})
+
+$('#ejia').click(function(){
+	var num = parseInt($('#espan').text());
+	var num2 = num+1;
+	$('#espan').text(num2);
+	
+})
+
+//跳转到购物车
+$('#detail_car').click(function(){
+	$('.body_opac').css('display','block');
+	
+	//购物车那边需要 shopname  location shopprice  shopnum  
+	/*'{"shopname":"'+$('#shopname').text()+'","locas":"'+$('#loca').text()+'","shopprice":"'+$('#price')+'","shopnum":"'+$('#espan')+'"}';*/
+	
+	createCookie('goodId','{"shopname":"'+$('#shopname').text()+'","locas":"'+$('#loca').text()+'","shopprice":"'+$('#price').text()+'","shopnum":"'+$('#espan').text()+'"}',7)
+	
+})
+
+//点击隐藏
+$('.tits4').click(function(){
+	$('.body_opac').css('display','none');
+	
+})
 
 
-
-
-
-
-
-
-
+ 
 
 
 //引用页脚

@@ -3,49 +3,57 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/fontface.css"/>
-		<link rel="stylesheet" href="../../src/gulpmin/css/index.min.css" />
+		<link rel="stylesheet" href="../css/fontface.css" />
+		<link rel="stylesheet" href="../../src/gulpmin/css/shoppingCart.min.css" />
+		
 	</head>
 	<body>
-			<!--头部-->
-			<div class="quote"></div>
-			<!--版心部分-->
-			<div class="middle_top">
-				<div class="wrap">
-					<div class="wrap_left">
-						<div class="sec"><img src="../image/index1.jpg" alt="" /></div>
-						<div class="sec_2"><img src="../image/index36.png" alt="" /></div>
-						<div class="left_mask"></div>
-					</div>
-					
-					<div class="wrap_right">
-						<div class="international">
-							<div class="inter_img1"><img src="../image/index3.png" alt="" /></div>
-							<div class="inter_img2"><img src="../image/index2.jpg" alt="" /></div>
-						</div>
-						<div class="video"><video width="650" height="550" controls preload='none'muted autoplay loop>
-							<source src="../image/secoo1111.mp4" type="video/mp4"></source>
-							
-							
-							<object width="650" height="550" type="application/x-shockwave-flash" data="myvideo.swf">
-								<param name="movie" value="myvideo.swf" />
-								<param name="flashvars" value="autostart=true&amp;file=myvideo.swf" />
-							</object>
-							当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
-						</video>
-						<div class="video_mask"><img src="../image/video-play.png" alt="" /></div>
-						</div>
-						<div class="right_mask"></div>
-					</div>
-					
-				</div>
+		<div class="header">
+			<div class="wrap">
+				<img src="../image/shoppingCart1.png" alt="" class="img"/>
+				<img src="../image/shoppingCart2.jpg" class="img2"/>
 			</div>
-			<!--
-            	作者：offline
-            	时间：2018-12-29
-            	描述：轮播图位置
-            -->
-			<div class="middle_carousel">
+		</div>
+		<div class="main">
+			<div class="main_wrap">
+				<!--
+                	作者：offline
+                	时间：2019-01-03
+                	描述：购物栏
+                -->
+				<div class="shop_carform">
+					<p class="shop_p4">现在<a href="login.html">登录</a>您的购物车的商品将被永久保存</p>
+					<table border="0" cellspacing="0" cellpadding="" id="table1">
+						<tbody id="tb1">
+						<tr id="first_tr"><td>全选</td><td>商品名称</td><td>发货站</td><td>价格</td><td>数量</td><td>金额小计</td><td>操作</td></tr>
+						
+						<tr><td><input type="checkbox" /></td><td><img src="../../src/image/detail1.jpg" alt="" /><span id="shopname"></span></td><td id="locas"></td><td id="shopprice"></td><td class="tdbtn"><button id="jian">-</button><span class="spannum"></span><button id="jia">+</button></td><td class="tdmoney"></td><td id="delt">删除</td></tr>
+						</tbody>
+					</table>
+					<div class="parse_shop">
+						<p class="p1"><input type="checkbox" class="input1" /><span class="spall">全选</span><span class="s3">商品数量总计:</span><span id="num1"></span></p>
+						<p class="p1"><span>包装数量总计:</span><span id="num2"></span></p>
+						<p class="p1"><span>商品金额总计(不含税金和运费):</span> <span id="count"></span></p>
+						<p class="p1"><span class="buyon"><a href="index.html">继续购物</a></span><span class="count_shop">立即结算</span></p>
+					</div>
+				</div>
+				
+				
+				
+				<div class="cart">
+					<img src="../image/shoppingCart3.jpg" alt="" />
+					<h2>购物车内暂时没有商品,您可以:</h2>
+					<p class="p1"><a href="index.html">返回首页挑选商品</a></p>
+				</div>
+				
+			</div>
+		</div>
+		<!--
+        	作者：offline
+        	时间：2019-01-03
+        	描述：轮播鞋
+        -->
+		<div class="middle_carousel">
 				<div class="wrap">
 					<div class="carousel_title"><img src="../image/editor-pick.png" alt="" /></div>
 					<div class="carousel_bott"><img src="../image/index24.png" alt="" /><span class="carous_i"><i class="iconfont">&#xe507;</i></span><span class="carous_i2"><i class="iconfont">&#xe502;</i></span>	
@@ -276,56 +284,47 @@
 								</div>
 							</div>
 						</div>	
-						
-					
-					
-						
-						
+
+					</div>
+					</div>
+				</div>
+			</div>
 		
-					</div>
-					</div>
-				</div>
+		
+		
+		
+		
+		
+		
+		<div class="cartbottom">
+			<ul>
+			<li><div class="bgbox"><p class="lip1"></p></div><p>正品保证</p></li>
+			<li><div class="bgbox"><p class="lip2"></p><p>七天退休</p></li>
+			<li><div class="bgbox"><p class="lip3"></p><p>维修保养</p></li>
+			<li><div class="bgbox"><p class="lip4"></p><p>权威鉴定 </p></li>
+			<li><div class="bgbox"><p class="lip5"></p><p>管家服务</p></li>
+			</ul>
+			<div class="er1"><img src="../../src/image/shoppingCart4.jpg" alt="" /><p class="erp">关注寺库微信</p><p class="erp2">扫扫有惊喜</p></div>
+			<div class="er1"><img src="../../src/image/shoppingCart4.jpg" alt="" /><p class="erp">关注寺库微信</p><p class="erp2">扫扫有惊喜</p></div>
+			<div class="dls">
+				<dl>
+					<dd>加入寺库</dd>
+					<dd>联系我们</dd>
+					<dd>帮助中心</dd>
+					<dd>免责声明</dd>
+					<dd>寺库微博</dd>
+				</dl>
+				<dl>
+					<dd>关于寺库</dd>
+					<dd>支付方式</dd>
+					<dd>售后服务</dd>
+					<dd>礼品采购</dd>
+					<dd>友情链接</dd>
+				</dl>
 			</div>
-			
-			<!--时装衣橱-->
-			<div class="middle_wardrobe">
-				<div class="wrap">
-					<div class="wardrobe_img1"><img src="../image/index25.jpg" alt="" /><div class="wardrobe_mask"></div></div>
-					<div class="wardrobe_img2">
-						<img src="../image/index26.png" alt="" />
-					</div>
-					<div class="sikuApp"><img src="../image/index27.jpg" alt="" /></div>
-				<div class="kuke">
-					<div class="kuke_img1"><img src="../image/index28.jpg"/><div class="kuke_mask1"></div></div>
-					<div class="kuke_img2"><img src="../image/index29.jpg"/><div class="kuke_mask2"></div></div>
-					<div class="kuke_img3"><img src="../image/index30.jpg"/><div class="kuke_mask3"></div></div>
-					
-				</div>	
-				</div>
-			</div>
-			
-				
-			<!--
-            	作者：offline
-            	时间：2018-12-29
-            	描述：the world of sec
-            -->	
-            <div class="Global">
-            	<div class="wrap">
-            		<div class="Global_tit"><img src="../image/index31.png" alt="" /></div>
-            	 <div class="Global_text"><div class="Global_img1"><img src="../image/index32.jpg" alt="" />
-            	 <div class="img_mask1"></div>
-            	 </div>
-            	 <div class="Global_img2"><img src="../image/index33.jpg" alt="" /><div class="img_mask2"></div></div>
-            	<div class="Global_img3"><img src="../image/index34.jpg" alt="" /><div class="img_mask3"></div></div> </div>
-            	</div>
-            </div>
-			<!--底部-->
-			<div class="quote_footer"></div>
-			
-			<script src="../js/jquery-1.11.3.js"></script>
-			<script src="../js/public.min.js"></script>
-			<script src="../../src/gulpmin/js/cookie.min.js"></script>
-			<script src="../../src/gulpmin/js/index.min.js"></script>
+		</div>
+		<script src="../js/jquery-1.11.3.js"></script>
+		<script src="../../src/gulpmin/js/cookie.min.js"></script>
+		<script src="../../src/gulpmin/js/shoppingCart.min.js"></script>
 	</body>
 </html>

@@ -22,16 +22,16 @@
 					<div class="bg_wrap">
 							
 						<div class="register">
-							<p><span>用户名</span><span>请输入手机号或者邮箱</span></p>
+							<p><span>用户名</span><span id="sred1">请输入手机号或者邮箱</span></p>
 							<div class="username"><input type="text" id="user"/></div>
-							<p class="pn1"><span>验证码</span></p>
-							<div class="realnum"><input type="" name="" id="" value="" /><span>12121</span><em>换一换</em></div>
-							<p>密码</p>
-							<div class="userpass"><input type="password" /></div>
-							<p><span>确认密码</span></p>
-							<div class="subpass"><input type="password" /></div>
-					<div class="regist_only">立即注册</div>
-					<div class="checked"><input type="checkbox" />我已阅读并同意《寺库网用户注册协议》</div>
+							<p class="pn1" id="pn1"><span>验证码</span></p>
+							<div class="realnum" id="realnum"><input type="" name="" id="realinput" value="" /><span id="randnum"></span><button id="randem">换一换</button><em id="wrongem">*验证码错误</em></div>
+							<p><span>密码</span><span id="wrongspan">密码格式错误6到12位字母数字下划线</span></p>
+							<div class="userpass"><input type="password" id="upassword" /></div>
+							<p><span>确认密码</span><span id="wrongspan2">与密码不一致</span></p>
+							<div class="subpass"><input type="password"  id="subpass"/></div>
+					<div class="regist_only" id="register_username">立即注册</div>
+					<div class="checked"><input type="checkbox" checked="checked" />我已阅读并同意《寺库网用户注册协议》</div>
 						
 						</div>
 					</div>
@@ -70,5 +70,17 @@
 					<p><img src="../../src/image/public2.jpg" alt="" /><img src="../image/public3.jpg" alt="" /><img src="../image/public10.png" alt="" /></p>
 				</div>
 			</div>
+			
+			<div class="body_all">
+				<div class="main">
+					<div class="text" id="regsucc"></div>
+					<div class="btn-login"><a href="login.html">前往登录</a></div>
+					<div class="btn-register"><a href="register.html">留在本页</a></div>
+				</div>
+			</div>
+			
+			<script src="../js/jquery-1.11.3.js"></script>
+			<script src='../../src/gulpmin/js/cookie.min.js'></script>
+			<script src="../../src/gulpmin/js/register.min.js"></script>
 	</body>
 </html>

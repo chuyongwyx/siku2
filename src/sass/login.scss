@@ -180,7 +180,7 @@ a{
              border: 1px solid #CCCCCC ;
              float: left;
              
-             margin-top:100px;
+             margin-top:10px;
              margin-left: 20px;
              input{
                  border: 0;
@@ -189,6 +189,7 @@ a{
                  width: 320px;
                  text-indent: 10px;
                  outline: none;
+                 font-size: 14px;
              }
              i{
                  font-size: 20px;
@@ -248,11 +249,15 @@ a{
             border: 1px solid gray;
             margin-top: 2px;
             text-align: center;
+            color: #fff;
             
         }
-        em{
-            font-size: 12px;
-        }
+        button{
+             font-size: 12px;
+             cursor: pointer;
+             border: 0;
+             background: #fff;
+         }
 }
 
 .checked{
@@ -272,6 +277,7 @@ a{
             text-align: center;
             line-height: 50px;
             color: #fff;
+            cursor: pointer;
 }
 
 //底部栏样式
@@ -308,3 +314,29 @@ a{
                }
            }
 }
+
+.alerts{
+            width: 340px;
+            height: 25px;
+            float: left;
+            
+            border: 1px solid orange;
+            margin-left: 20px;
+            margin-top: 50px;
+            line-height: 25px;
+            display: none;
+            
+            
+}
+#altersImg{
+                width: 16px;
+                height: 16px;
+                float: left;
+                display: block;
+                margin-top: 5px;
+}
+#alertsp{
+                float:right;
+                font-size:12px ;
+                color: red;
+            }

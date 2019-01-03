@@ -75,6 +75,31 @@ $('#register').hover(function(){
 //					 				</div>
 //					 				
 //					 			</div>
+//首页的登录名
+
+
+					
+					  var  logname = searchCookie('user');
+					   
+					  if (logname != null){
+					  		var  user = logname;
+					  		$('#login').text(user);
+					  		$('#login').css('color','red');
+					  		$('#register').text('注销');
+					  		$('#register')[0].href='javascript:;';
+					  		$('#register').click(function(){
+					  								document.cookie='user='+user+''+';path=/'+";expires=" + new Date(0);
+					  				
+					  			$('#register').text('注册');
+					  			$('#login').text('登录');
+					  			
+					  		})
+					  }else{}
+
+
+
+
+
 $.get('../json/public.json?t='+new Date().getTime(),function(str){
 			//操作str数据
 			//console.log(str);
