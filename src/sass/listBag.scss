@@ -4,10 +4,16 @@
                         
                         
             }
+            
+   
 body,ul,p,input,td,tr,img,h1,h2,h3,h4,h5,dl,dt,dd,button{
                         padding: 0;
                         margin: 0;
             }
+            
+     ul{
+         list-style: none;
+     }
 
 .list_all{
             width: 100%;
@@ -214,4 +220,362 @@ body,ul,p,input,td,tr,img,h1,h2,h3,h4,h5,dl,dt,dd,button{
               }  
                 
             }
+}
+
+//商城的css
+.mall{
+            width:100%;
+            overflow: hidden;
+            background: #ededed;
+            padding-top: 30px;
+          .mall_wrap{
+               width: 1196px;
+               margin: 0 auto;
+               overflow: hidden;  
+               background: #fff;
+               box-shadow: 0 0 3px #666;
+              
+              .mall_tit{
+                   width:100%;
+                   height: 50px;
+                   .mall_kind1{
+                      
+                       
+                       border-top:2px solid red ;
+                       line-height: 1;
+                       float: left;
+                       width:100px ;
+                       text-align: center;
+                       display: block;
+                       a{
+                           font-size: 22px;
+                           display: block;
+                           height: 22px;
+                           margin-top:10px;
+                            width:100% ;
+                           color: #e93b39;;
+                           border-right: 1px solid #ededed;
+                       }
+                   }
+                   
+                   .mall_kind2{
+                       line-height: 1;
+                       float: left;
+                       width:100px ;
+                       text-align: center;
+                       display: block;
+                       a{
+                           font-size: 22px;
+                           display: block;
+                           height: 22px;
+                           margin-top:10px;
+                            width:100% ;
+                           color: #666;
+                           
+                       }
+                   }
+                   
+              }
+              
+              .mall_bag{
+                        width: 100%;
+                        overflow: hidden;
+                        .shops_select{
+                            width: 100%;
+                            height: 30px;
+                            background:#ededed ;
+                            padding: 5px 20px;
+                           .sel_1{
+                                float: left;
+                                font-size: 12px;
+                                width: 40px;
+                                height: 20px;
+                                line-height: 20px;
+                               padding-left: 4px;
+                               margin-top: 5px;
+                               background: #e93b39;
+                            border-color: #e93b39;
+                            color: #fff;
+                                i{
+                                    font-size: 12px;
+                                }
+                           }
+                           
+                           .sel_2{
+                               
+                                float: left;
+                                font-size: 12px;
+                                width: 40px;
+                                height: 18px;
+                                line-height: 20px;
+                               padding-left: 4px;
+                               margin-top: 5px;
+                               background: #fff;
+                               border: 1px solid #F5F5F5;
+                               text-align: center;
+                            
+                            color: #666;
+                              i{
+                                    font-size: 12px;
+                                }
+                           } 
+                           
+                           .sel_3{
+                               @extend .sel_2;
+                               width: 52px;
+                               span{
+                                   width: 20px;
+                                   font-size: 14px;
+                                   display: inline-block
+                                  
+                               }
+                           }
+                           
+                           
+                           .price{
+                               width: 127px;
+                               margin-top: 5px;
+                               height: 20px;
+                               float: left;
+                              margin-left: 20px;
+                               .price_1{
+                                   width: 60px;
+                                   float: left;
+                                   background: #fff;
+                                   i{
+                                       font-size: 12px;
+                                   }
+                               }
+                               
+                                .price_2{
+                                   width: 60px;
+                                   float: right;
+                                   background: #fff;
+                                   i{
+                                       font-size: 12px;
+                                   }
+                               }
+                           }
+                           
+                           .checks{
+                                width: 300px;
+                                float: left;
+                                height: 20px;
+                                  margin-top: 5px;
+                                  font-size:12px;
+                                  color:#666 ;
+                                input{
+                                        margin-top: 5px;
+                                        margin-left: 14px;
+                                }
+                           }
+                           .search_cell{
+                               width:131px;
+                               float: left;
+                               margin-top: 5px;
+                               #txt1{
+                                   width: 100px;
+                               }
+                               #btn1{
+                                   background: #fff;
+                                   border: 0;
+                                   color:#666;
+                                   float: right;
+                                   margin-top:4px ;
+                               }
+                               
+                           }
+                        }
+              }
+          }  
+}
+
+
+//shop列表中样式
+.shop_list{
+            width: 100%;
+            padding: 0 20px;
+            overflow: hidden;
+            .mall_li{
+                width: 250px;
+                height: 380px;
+                box-sizing: border-box;
+                float: left;
+                margin: 5px 14px;
+                padding: 3px;
+                margin-bottom: 10px;
+                img{
+                        display: block;
+                        width: 240px;
+                        height:240px ;
+                        border: 0;
+                }
+                .li_local{
+                     width: 100%;
+                     font-size:12px; ;
+                     margin-bottom:10px ;
+                     
+                    span:nth-of-type(2n+1){
+                        background: #e93b39;
+                        color: #fff;
+                        margin-left: 5px;
+                    }
+              span:nth-of-type(2n){
+                    background: #000;
+                    color: #fff;
+                    margin-left: 5px;
+              }
+                }
+                .shop_info{
+                    border-top: 1px solid #666;
+                    padding-top: 10px;
+                    font-size: 12px;
+                   a{
+                       color: #666;
+                   }
+                }
+                
+                .price_p{
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: #666;
+                }
+                .shop_car{
+                        width: 100%;
+                        font-size: 12px;
+                        margin-top: 10px;
+                        display: none;
+                        .shop_add{
+                            display:block ;
+                            
+                            width: 80px;
+                            height: 30px;
+                            line-height: 30px;
+text-align: center;                            background: #e93b39;
+                            float:left;
+                            a{
+                                color: #fff;
+                            }
+                        }
+                        
+                        span:nth-of-type(2){
+                            color: #666;
+              float: left;              
+                            margin-left: 10px;
+                            margin-top: 10px;
+                        }
+ span:nth-of-type(3){
+            float: right;
+            margin-top: 10px;
+            i{
+                font-size: 12px;
+            }
+ }
+                }
+            }
+}
+//畅销排行榜
+.good_cell{
+        width: 100%;
+        overflow: hidden;
+        padding: 0 30px;
+        h3{
+            font-weight: normal;
+            font-size: 16px;
+            color: #666;
+            text-align: left;
+            
+        }
+        .good_image{
+            width:162px;
+            overflow: hidden;
+            float: left;
+            margin: 0 10px;
+            img{
+                display: block;
+                width: 160px;
+                height: 160px;
+                border: 1px solid #F5F5F5;
+            }
+            .good_p{
+                font-size: 12px;
+                line-height: 16px;
+                color: #666;
+            }
+            .good_price{
+                font-size:14px;
+                color: #000;
+                margin-top: 5px;
+                font-weight: bold;
+            }
+        }
+}
+
+//底部搜索框
+.search_text{
+                width: 100%;
+                overflow: hidden;
+               
+                text-align: center;
+                
+               #box{
+                   width: 680px;
+                   height: 32px;
+                   border: 2px solid #5b4f9d ;
+                   float: left;
+                   margin: 80px 0;
+                   margin-left: 300px;
+                   .txt2{
+                       width:600px;
+                       height: 30px;
+                       border: 0;
+                       outline: none;
+                   }
+                   .btn2{
+                       width:80px ;
+                       height: 32px;
+                       border: none;
+                       outline: none;
+                       color:#fff;
+                       background: #5b4f9d ;
+                   }
+               } 
+}
+
+.collect{
+                width: 100%;
+               
+                overflow: hidden;
+                height: 200px;
+                padding-top:40px;
+                background: #ededed;
+              .collect_wrap{
+                  width: 1200px;
+                  overflow: hidden;
+                  margin: 0 auto;
+                  background: #fff;
+                  p:nth-of-type(1){
+                      margin: 30px 0;
+                      margin-left: 30px;
+                      font-size: 12px;
+                      color: #000;
+                      span{
+                        display: inline-block;   
+                                width: 60px;
+text-align: center;                                height: 24px;
+line-height: 24px;
+
+                                border: 1px solid #F5F5F5;
+                                
+                      }
+                  }
+                  
+                  p:nth-of-type(2){
+                      margin-bottom: 30px;
+                      font-size: 12px;
+                      margin-top: 30px;
+                      margin-left: 30px;
+                      color: #666;
+                  }
+              }
 }

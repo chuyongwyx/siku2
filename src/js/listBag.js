@@ -281,6 +281,16 @@ $.get('../../dist/json/bagPouch.json?t='+new Date().getTime(),function(str){
 			resolve(btn);
 			}).then(
 				new Promise(function(resolve,reject){
+				$('.btn_down').click(function(){
+					
+					$(this).parent().parent().css('height','45px');
+					$(this).parent().parent().children().css('border','none');
+					$(this).parent().parent().next().css('display','block');
+					$(this).parent().remove();
+					
+				})
+					
+					
 				$('.btn_ok').click(function(){
 				$('#select_a').append('<a href="javascript:;">'+ddt_text+dda_text+'<em>x</em></a>');
 				$('.select_kind').css('display','block');
@@ -316,12 +326,21 @@ $.get('../../dist/json/bagPouch.json?t='+new Date().getTime(),function(str){
 					
 		
 		});
-		
-		
-		
-		//更多的问题
+			
+
 		//点击更多按钮把隐藏的部分显示出来
-		
+		var i =0 ;
+		$('.mores').click(function(){
+			if(i==0){
+			$(this).parent().parent().css('height','200px');
+			$(this).children('i').html('&#xe609;');
+			i=1
+			}else{
+				$(this).parent().parent().css('height','45px');
+			$(this).children('i').html('&#xe509;');
+			i=0;
+			}
+		})
 		
 		
 })
@@ -345,6 +364,140 @@ $('.list_i2').hover(function(){
 	$('#list_shop a').css('color','');
 	
 })
+
+
+//列表页中的图片部分js操作
+//吸顶
+  $(window).scroll( function() {
+  	var scrolls=$(window).scrollTop();
+  	if(scrolls>= 1600){
+  			
+  			
+ 			$('#shop_select').css('position','fixed').css('top','0').css('left','50px')
+  	}else{
+  		$('#shop_select').css('position','static');
+  	}
+  } );
+
+//图片从ajax中获取
+$.get('../json/listImage.json?t='+new Date().getTime(),function(str){
+	
+		//console.log(str["listBag1.jpg"]["src"]);
+		//console.log(str["listBag1.jpg"]["descript"]);
+	$('#shop_list li').eq(0).children('img')[0].src=str["listBag1.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(0).children('a')[0].innerText=str["listBag1.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(0)[0].innerText=str["listBag1.jpg"]["price"];
+	
+	$('#shop_list li').eq(1).children('img')[0].src=str["listBag2.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(1).children('a')[0].innerText=str["listBag2.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(1)[0].innerText=str["listBag2.jpg"]["price"];
+	
+	$('#shop_list li').eq(2).children('img')[0].src=str["listBag3.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(2).children('a')[0].innerText=str["listBag3.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(2)[0].innerText=str["listBag3.jpg"]["price"];
+	
+	
+	$('#shop_list li').eq(3).children('img')[0].src=str["listBag4.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(3).children('a')[0].innerText=str["listBag4.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(3)[0].innerText=str["listBag4.jpg"]["price"];
+	
+	$('#shop_list li').eq(4).children('img')[0].src=str["listBag5.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(4).children('a')[0].innerText=str["listBag5.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(4)[0].innerText=str["listBag5.jpg"]["price"];
+	
+	
+	$('#shop_list li').eq(5).children('img')[0].src=str["listBag6.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(5).children('a')[0].innerText=str["listBag6.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(5)[0].innerText=str["listBag6.jpg"]["price"];
+	
+	$('#shop_list li').eq(6).children('img')[0].src=str["listBag7.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(6).children('a')[0].innerText=str["listBag7.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(6)[0].innerText=str["listBag7.jpg"]["price"];
+	
+	$('#shop_list li').eq(7).children('img')[0].src=str["listBag8.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(7).children('a')[0].innerText=str["listBag8.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(7)[0].innerText=str["listBag8.jpg"]["price"];
+	
+	$('#shop_list li').eq(8).children('img')[0].src=str["listBag9.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(8).children('a')[0].innerText=str["listBag9.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(8)[0].innerText=str["listBag9.jpg"]["price"];
+	
+	
+	$('#shop_list li').eq(9).children('img')[0].src=str["listBag10.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(9).children('a')[0].innerText=str["listBag10.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(9)[0].innerText=str["listBag10.jpg"]["price"];
+	
+$('#shop_list li').eq(10).children('img')[0].src=str["listBag11.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(10).children('a')[0].innerText=str["listBag11.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(10)[0].innerText=str["listBag11.jpg"]["price"];	
+	
+	
+	$('#shop_list li').eq(11).children('img')[0].src=str["listBag12.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(11).children('a')[0].innerText=str["listBag12.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(11)[0].innerText=str["listBag12.jpg"]["price"];	
+	
+	$('#shop_list li').eq(12).children('img')[0].src=str["listBag13.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(12).children('a')[0].innerText=str["listBag13.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(12)[0].innerText=str["listBag13.jpg"]["price"];
+	
+	
+	$('#shop_list li').eq(13).children('img')[0].src=str["listBag14.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(13).children('a')[0].innerText=str["listBag14.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(13)[0].innerText=str["listBag14.jpg"]["price"];
+		
+	
+	$('#shop_list li').eq(14).children('img')[0].src=str["listBag15.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(14).children('a')[0].innerText=str["listBag15.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(14)[0].innerText=str["listBag15.jpg"]["price"];
+	
+	$('#shop_list li').eq(15).children('img')[0].src=str["listBag16.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(15).children('a')[0].innerText=str["listBag16.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(15)[0].innerText=str["listBag16.jpg"]["price"];
+	
+	$('#shop_list li').eq(16).children('img')[0].src=str["listBag17.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(16).children('a')[0].innerText=str["listBag17.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(16)[0].innerText=str["listBag17.jpg"]["price"];
+	
+	$('#shop_list li').eq(17).children('img')[0].src=str["listBag18.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(17).children('a')[0].innerText=str["listBag18.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(17)[0].innerText=str["listBag18.jpg"]["price"];
+	
+	$('#shop_list li').eq(18).children('img')[0].src=str["listBag19.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(18).children('a')[0].innerText=str["listBag19.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(18)[0].innerText=str["listBag19.jpg"]["price"];
+	
+	$('#shop_list li').eq(19).children('img')[0].src=str["listBag20.jpg"]["src"];
+	$('#shop_list li .shop_info').eq(19).children('a')[0].innerText=str["listBag20.jpg"]["descript"];
+	$('#shop_list li .price_p').eq(19)[0].innerText=str["listBag20.jpg"]["price"];
+	
+	
+	
+	
+})
+
+
+//鼠标滑过图片图片出现边框
+
+$('.mall_li').hover(function(){
+	$(this).css('border','2px solid #666');
+	$(this).children('.shop_car').css('display','block');
+},function(){
+	$(this).css('border','none');
+	$(this).children('.shop_car').css('display','none');
+})
+
+//鼠标点击第一个li跳转到详情页
+$('#mall_li1').click(function(){
+	
+	var  imgSrc = $('#mall_li1 img')[0].src;
+	var  imgInfo = $('#mall_li1 .shop_info a').text();
+	var  imgPrice = $('#mall_li1 .price_p').text();
+	
+	window.location='../../dist/html/detailsShop.html?imgSrc='+imgSrc+'&imgInfo='+imgInfo+'&imgPrice='+imgPrice+'';
+	
+})
+
+
 
 
 })()
